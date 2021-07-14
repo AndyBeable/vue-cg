@@ -8,8 +8,14 @@ const app = Vue.createApp({
     increase() {
       this.counter++;
     },
-    descrease() {
+    decrease() {
       this.counter--;
+    },
+    increase5(num) {
+      this.counter = this.counter + num;
+    },
+    decrease5(num) {
+      this.counter = this.counter - num;
     },
   },
 });
