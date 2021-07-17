@@ -8,7 +8,7 @@ const app = Vue.createApp({
   },
   methods: {
     increase() {
-      this.counter++;
+      this.counter = this.counter + 1;
     },
     decrease() {
       this.counter--;
