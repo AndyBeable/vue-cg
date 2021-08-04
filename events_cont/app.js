@@ -1,3 +1,18 @@
+// Methods can be used for:
+// Use with event or data binding
+// For data binding = method is executed for every re-render cycle of the component
+// Use for event or data that really needs to be re-evaluated all the time
+
+// Computed
+// Use with data binding only
+// Only re-evaluated if dependent changes
+// use for when data depends on other data
+
+// Watchers
+// Not used directly in the template
+// Allows to run code in reaction to some changed data
+// Use for any non-data update you want to make
+
 const app = Vue.createApp({
   data() {
     return {
