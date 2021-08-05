@@ -7,11 +7,11 @@ const app = Vue.createApp({
   computed: {
     result() {
       if (this.number < 37) {
-        return 'Not there yet';
+        return 'Too small';
       } else if (this.number === 37) {
         return this.number;
       } else {
-        return 'Too much';
+        return 'Too large';
       }
     },
   },
