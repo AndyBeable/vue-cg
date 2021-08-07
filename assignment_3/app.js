@@ -20,7 +20,7 @@ const app = Vue.createApp({
       const that = this;
       setTimeout(function () {
         that.number = 0;
-      }, 5000);
+      }, 4500);
     },
   },
   methods: {
