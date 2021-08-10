@@ -25,3 +25,15 @@ const app3 = new Vue({
     count: 11,
   },
 });
+const app4 = new Vue({
+  el: '#app4',
+  data: {
+    isActive: true,
+  },
+});
+const app5 = new Vue({
+  el: '#app5',
+  data: {
+    count: 0,
+  },
+});

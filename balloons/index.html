@@ -8,6 +8,7 @@
       <!-- development version, includes helpful console warnings -->
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
       <script src="script.js" defer></script>
+      <link rel="stylesheet" href="style.css" />
     </head>
     <title>Vue Intro</title>
   </head>
@@ -30,6 +31,17 @@
       <div v-if="count > 10">Count is greater than 10</div>
       <div v-else-if="count == 10">Count is 10</div>
       <div v-else>Count is less than 10</div>
+    </div>
+
+    <div id="app4">
+      <h3 v-bind:class="[isActive ? 'active' : 'notActive']">
+        This is a sample text
+      </h3>
+    </div>
+    <div id="app5">
+      <h3>{{count}}</h3>
+      <button v-on:click="count +=1">Increase</button>
+      <button v-on:click="count -=1">Decrease</button>
     </div>
   </body>
 </html>
