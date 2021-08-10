@@ -12,7 +12,15 @@
     <title>Vue Intro</title>
   </head>
   <body>
-    <div id="app1">{{ message }}</div>
+    <div id="app1">
+      {{ message }}
+      <ul>
+        <li v-for="n in 5">{{n}}</li>
+        <li v-for="n in countdown">{{n}}</li>
+        <li v-for="(fruit, i) in fruits">{{i}} - {{fruit}}</li>
+        <li v-for="(value, key, index) in profile">{{key}} -{{value}}</li>
+      </ul>
+    </div>
     <div id="app2">
       <h3>Your name is: {{ name }}</h3>
       <input type="text" v-model="name" />
