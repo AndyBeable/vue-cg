@@ -19,3 +19,9 @@ const app2 = new Vue({
     name: 'Andy',
   },
 });
+const app3 = new Vue({
+  el: '#app3',
+  data: {
+    count: 11,
+  },
+});

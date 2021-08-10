@@ -25,5 +25,11 @@
       <h3>Your name is: {{ name }}</h3>
       <input type="text" v-model="name" />
     </div>
+
+    <div id="app3">
+      <div v-if="count > 10">Count is greater than 10</div>
+      <div v-else-if="count == 10">Count is 10</div>
+      <div v-else>Count is less than 10</div>
+    </div>
   </body>
 </html>
