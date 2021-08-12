@@ -17,24 +17,38 @@ const app = Vue.createApp({
 
 app.mount('#app');
 
+const app2 = Vue.createApp({
+  template: `
+  <h2>Favourite Food</h2>
+  <p>{{ favouriteFood }}</p>
+  `,
+  data() {
+    return {
+      favouriteFood: 'Pizza',
+    };
+  },
+});
+
+app2.mount('#app2');
+
 // JS Reactivity
 
-const data = {
-  message: 'Hello!',
-  longMessage: 'Hello World!',
-};
+// const data = {
+//   message: 'Hello!',
+//   longMessage: 'Hello World!',
+// };
 
-const handler = {
-  set(target, key, value) {
-    if (key === 'message') {
-      target.longMessage = value + 'World!';
-    }
-    target.message = value;
-  },
-};
+// const handler = {
+//   set(target, key, value) {
+//     if (key === 'message') {
+//       target.longMessage = value + 'World!';
+//     }
+//     target.message = value;
+//   },
+// };
 
-const proxy = new Proxy(data, handler);
+// const proxy = new Proxy(data, handler);
 
-proxy.message = 'Hello!!!';
+// proxy.message = 'Hello!!!';
 
-console.log(proxy.longMessage);
+// console.log(proxy.longMessage);
