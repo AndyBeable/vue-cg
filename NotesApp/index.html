@@ -11,9 +11,10 @@
     <section id="app">
       <input type="text" v-model="enteredNoteValue" />
       <button @click="addNote">Add Note</button>
-      <ul>
+      <ul v-if="notesListIsVisible">
         <li v-for="note in notes">{{note}}</li>
       </ul>
+      <button @click="toggleNotesList">Show/Hide List</button>
     </section>
   </head>
   <body></body>

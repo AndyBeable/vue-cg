@@ -3,12 +3,16 @@ const app = Vue.createApp({
     return {
       enteredNoteValue: '',
       notes: [],
+      notesListIsVisible: true,
     };
   },
   methods: {
     addNote() {
       this.notes.push(this.enteredNoteValue);
       this.enteredNoteValue = '';
+    },
+    toggleNotesList() {
+      this.notesListIsVisible = !this.notesListIsVisible;
     },
   },
 });
