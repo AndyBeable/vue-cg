@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@next" defer></script>
     <script src="./script.js" defer></script>
     <title>NotesApp</title>
     <section><h1>Notes</h1></section>
     <section id="app">
-      <input type="text" />
-      <button>Add Note</button>
+      <input type="text" v-model="enteredNoteValue" />
+      <button @click="addNote">Add Note</button>
+      <ul>
+        <li v-for="note in notes">{{note}}</li>
+      </ul>
     </section>
   </head>
   <body></body>
