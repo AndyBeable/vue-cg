@@ -6,6 +6,11 @@ const app = Vue.createApp({
       notesListIsVisible: true,
     };
   },
+  computed: {
+    buttonCaption() {
+      return this.notesListIsVisible ? 'Hide' : 'Show';
+    },
+  },
   methods: {
     addNote() {
       this.notes.push(this.enteredNoteValue);
