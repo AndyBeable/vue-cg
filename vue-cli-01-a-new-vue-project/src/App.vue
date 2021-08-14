@@ -2,22 +2,18 @@
   <section>
     <h2>My Friends</h2>
     <ul>
-      <li></li>
+      <friend-contact></friend-contact>
     </ul>
   </section>
 </template>
 
 <script>
+import FriendContact from './components/FriendContact.vue';
 export default {
+  components: { FriendContact },
   data() {
     return {
       friends: [
-        {
-          id: 'Andy',
-          name: 'Andy Beable',
-          phone: '01234567678',
-          email: 'andy.beable@gmail.com',
-        },
         {
           id: 'Iris',
           name: 'Iris Esteve Hernandez',
