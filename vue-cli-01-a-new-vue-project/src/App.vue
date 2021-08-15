@@ -4,8 +4,16 @@
       <h1>My Friends</h1>
     </header>
     <ul>
-      <friend-contact></friend-contact>
-      <friend-contact></friend-contact>
+      <friend-contact
+        name="John Doe"
+        phone-number="0122343255"
+        email-address="johnDoe@gmail.com"
+      ></friend-contact>
+      <friend-contact
+        name="Steve Smith"
+        phone-number="0353454634"
+        email-address="steveSmith@gmail.com"
+      ></friend-contact>
     </ul>
   </section>
 </template>
@@ -18,10 +26,10 @@ export default {
     return {
       friends: [
         {
-          id: 'Iris',
-          name: 'Iris Esteve Hernandez',
+          id: 'Steve',
+          name: 'Steve Smith',
           phone: '01234567678',
-          email: 'irisesteve@gmail.com',
+          email: 'steveSmith@gmail.com',
         },
       ],
     };
