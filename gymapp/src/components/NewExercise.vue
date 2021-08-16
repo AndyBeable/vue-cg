@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="submitData">
     <div>
       <label>Exercise</label>
       <input type="text" />
@@ -23,5 +23,26 @@
 </template>
 
 <script>
-export default {};
+export default {
+  emits: ['add-exercise'],
+  data() {
+    return {
+      enteredExercise: '',
+      enteredReps: '',
+      enteredSets: '',
+      enteredWeight: '',
+    };
+  },
+  methods: {
+    submitData() {
+      this.$emit(
+        'add-exercise',
+        this.enteredExercise,
+        this.enteredReps,
+        this.enteredSets,
+        this.enteredWeight
+      );
+    },
+  },
+};
 </script>

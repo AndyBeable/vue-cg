@@ -1,7 +1,7 @@
 <template>
   <section>
     <h1>GymApp</h1>
-    <new-exercise></new-exercise>
+    <new-exercise @add-exercise="addExercise"></new-exercise>
     <exercise
       v-for="exercise in exercises"
       :key="exercise.id"
@@ -53,6 +53,18 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    addExercise(name, reps, sets, weight) {
+      const newExercise = {
+        id: new Date().toISOString(),
+        name: name,
+        reps: reps,
+        sets: sets,
+        weight: weight,
+      };
+      this.exercises.push(newExercise);
+    },
   },
 };
 </script>
