@@ -2,15 +2,38 @@
   <section>
     <ul>
       <li>
-        <h2>Bench Press</h2>
-        <h3>Reps: 10</h3>
-        <h3>Sets: 5</h3>
-        <h3>Weight: 60kg</h3>
+        <h2>{{ name }}</h2>
+        <h3>{{ reps }}</h3>
+        <h3>{{ sets }}</h3>
+        <h3>{{ weight }}</h3>
       </li>
     </ul>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    reps: {
+      type: String,
+      required: true,
+    },
+    sets: {
+      type: String,
+      required: true,
+    },
+    weight: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>

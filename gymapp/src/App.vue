@@ -1,7 +1,15 @@
 <template>
   <section>
     <h1>GymApp</h1>
-    <exercise></exercise>
+    <exercise
+      v-for="exercise in exercises"
+      :key="exercise.id"
+      :id="exercise.id"
+      :name="exercise.name"
+      :reps="exercise.reps"
+      :sets="exercise.sets"
+      :weight="exercise.weight"
+    ></exercise>
   </section>
 </template>
 
@@ -10,6 +18,40 @@ import Exercise from './components/Exercise.vue';
 export default {
   name: 'App',
   components: { Exercise },
+  data() {
+    return {
+      exercises: [
+        {
+          id: 'bench',
+          name: 'Bench Press',
+          reps: '10',
+          sets: '5',
+          weight: '70kg',
+        },
+        {
+          id: 'squat',
+          name: 'Back Squat',
+          reps: '10',
+          sets: '5',
+          weight: '80kg',
+        },
+        {
+          id: 'press',
+          name: 'Shoulder Press',
+          reps: '10',
+          sets: '5',
+          weight: '40kg',
+        },
+        {
+          id: 'deadlift',
+          name: 'Dead lift',
+          reps: '10',
+          sets: '5',
+          weight: '100kg',
+        },
+      ],
+    };
+  },
 };
 </script>
 
