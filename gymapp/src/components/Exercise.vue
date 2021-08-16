@@ -1,9 +1,13 @@
 <template>
   <section>
-    <h2>Bench Press</h2>
-    <h3>Reps: 10</h3>
-    <h3>Sets: 5</h3>
-    <h3>Weight: 60kg</h3>
+    <ul>
+      <li>
+        <h2>Bench Press</h2>
+        <h3>Reps: 10</h3>
+        <h3>Sets: 5</h3>
+        <h3>Weight: 60kg</h3>
+      </li>
+    </ul>
   </section>
 </template>
 
