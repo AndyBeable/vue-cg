@@ -3,7 +3,9 @@
     <ul>
       <li>
         <h2>Exercise: {{ name }}</h2>
-        <button @click="toggleDetails">Show details</button>
+        <button @click="toggleDetails">
+          {{ detailsAreVisible ? 'Hide' : 'Show' }} details
+        </button>
         <ul v-if="detailsAreVisible">
           <li>
             <h3>Reps: {{ reps }}</h3>

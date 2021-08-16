@@ -1,6 +1,7 @@
 <template>
   <section>
     <h1>GymApp</h1>
+    <new-exercise></new-exercise>
     <exercise
       v-for="exercise in exercises"
       :key="exercise.id"
@@ -15,9 +16,10 @@
 
 <script>
 import Exercise from './components/Exercise.vue';
+import NewExercise from './components/NewExercise.vue';
 export default {
   name: 'App',
-  components: { Exercise },
+  components: { Exercise, NewExercise },
   data() {
     return {
       exercises: [
@@ -100,5 +102,15 @@ body {
   outline: none;
   border: none;
   text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+}
+#app button:hover,
+#app button:active {
+  background-color: #618ebb;
+  color: #2c3e50;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
 }
 </style>
