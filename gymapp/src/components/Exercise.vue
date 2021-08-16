@@ -2,10 +2,19 @@
   <section>
     <ul>
       <li>
-        <h2>{{ name }}</h2>
-        <h3>{{ reps }}</h3>
-        <h3>{{ sets }}</h3>
-        <h3>{{ weight }}</h3>
+        <h2>Exercise: {{ name }}</h2>
+        <button @click="toggleDetails">Show details</button>
+        <ul v-if="detailsAreVisible">
+          <li>
+            <h3>Reps: {{ reps }}</h3>
+          </li>
+          <li>
+            <h3>Sets: {{ sets }}</h3>
+          </li>
+          <li>
+            <h3>Weight: {{ weight }}</h3>
+          </li>
+        </ul>
       </li>
     </ul>
   </section>
@@ -33,6 +42,16 @@ export default {
     weight: {
       type: String,
       required: true,
+    },
+  },
+  data() {
+    return {
+      detailsAreVisible: false,
+    };
+  },
+  methods: {
+    toggleDetails() {
+      this.detailsAreVisible = !this.detailsAreVisible;
     },
   },
 };

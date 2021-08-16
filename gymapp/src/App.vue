@@ -85,10 +85,20 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 1rem auto;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
   width: 90%;
   max-width: 40rem;
   list-style: none;
+}
+
+#app button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #75a5d6;
+  color: #2c3e50;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
 }
 </style>
