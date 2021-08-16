@@ -106,6 +106,11 @@ body {
   list-style: none;
 }
 
+#app input {
+  margin: 0.25rem 0rem 0.25rem 1rem;
+  padding: 0.5rem;
+}
+
 #app button {
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -116,6 +121,7 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+  margin: 1rem 0;
 }
 #app button:hover,
 #app button:active {
