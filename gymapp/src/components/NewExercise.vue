@@ -2,19 +2,19 @@
   <form @submit.prevent="submitData">
     <div>
       <label>Exercise</label>
-      <input type="text" />
+      <input type="text" v-model="enteredExercise" />
     </div>
     <div>
       <label>Reps</label>
-      <input type="text" />
+      <input type="text" v-model="enteredReps" />
     </div>
     <div>
       <label>Sets</label>
-      <input type="text" />
+      <input type="text" v-model="enteredSets" />
     </div>
     <div>
       <label>Weight</label>
-      <input type="text" />
+      <input type="text" v-model="enteredWeight" />
     </div>
     <div>
       <button>Add Exercise</button>
