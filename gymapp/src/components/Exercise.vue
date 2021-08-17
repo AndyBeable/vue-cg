@@ -17,7 +17,7 @@
             <h3>Weight: {{ weight }}</h3>
           </li>
         </ul>
-        <button @click="$emit('delete', id)">Delete</button>
+        <button @click="$emit('delete', id)" class="delete-btn">Delete</button>
       </li>
     </ul>
   </section>

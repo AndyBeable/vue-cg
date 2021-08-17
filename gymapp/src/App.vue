@@ -2,6 +2,9 @@
   <section>
     <h1>GymApp</h1>
     <new-exercise @add-exercise="addExercise"></new-exercise>
+    <section>
+      <p v-if="restDay">Have a rest!</p>
+    </section>
     <exercise
       v-for="exercise in exercises"
       :key="exercise.id"
@@ -53,6 +56,7 @@ export default {
         //   weight: '100kg',
         // },
       ],
+      restDay: true,
     };
   },
   methods: {
@@ -130,6 +134,28 @@ ul {
 #app button:hover,
 #app button:active {
   background-color: #618ebb;
+  color: #2c3e50;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+}
+
+#app .delete-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #f35c5c;
+  color: #2c3e50;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+  margin: 1rem 1rem;
+}
+
+#app .delete-btn:hover,
+#app .delete-btn:active {
+  background-color: #ff8c8c;
   color: #2c3e50;
   outline: none;
   border: none;
