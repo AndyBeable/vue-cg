@@ -3,18 +3,21 @@
     <h1>GymApp</h1>
     <new-exercise @add-exercise="addExercise"></new-exercise>
     <section>
-      <p v-if="restDay">Have a rest!</p>
-    </section>
-    <exercise
-      v-for="exercise in exercises"
-      :key="exercise.id"
-      :id="exercise.id"
-      :name="exercise.name"
-      :reps="exercise.reps"
-      :sets="exercise.sets"
-      :weight="exercise.weight"
-      @delete="deleteExercise"
-    ></exercise>
+      <p v-if="exercises.length < 0">Have a rest!</p>
+   
+    
+      <exercise
+      v-if="exercises.length > 0"
+        v-for="exercise in exercises"
+        :key="exercise.id"
+        :id="exercise.id"
+        :name="exercise.name"
+        :reps="exercise.reps"
+        :sets="exercise.sets"
+        :weight="exercise.weight"
+        @delete="deleteExercise"
+      ></exercise>
+    
   </section>
 </template>
 
