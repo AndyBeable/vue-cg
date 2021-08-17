@@ -125,7 +125,7 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
-  margin: 1rem 0;
+  margin: 1rem 1rem;
 }
 #app button:hover,
 #app button:active {
