@@ -17,6 +17,7 @@
             <h3>Weight: {{ weight }}</h3>
           </li>
         </ul>
+        <button @click="$emit('delete', id)">Delete</button>
       </li>
     </ul>
   </section>
@@ -46,6 +47,7 @@ export default {
       required: true,
     },
   },
+  emits: ['delete'],
   data() {
     return {
       detailsAreVisible: false,

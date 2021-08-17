@@ -10,6 +10,7 @@
       :reps="exercise.reps"
       :sets="exercise.sets"
       :weight="exercise.weight"
+      @delete="deleteExercise"
     ></exercise>
   </section>
 </template>
@@ -30,27 +31,27 @@ export default {
           sets: '5',
           weight: '70kg',
         },
-        {
-          id: 'squat',
-          name: 'Back Squat',
-          reps: '10',
-          sets: '5',
-          weight: '80kg',
-        },
-        {
-          id: 'press',
-          name: 'Shoulder Press',
-          reps: '10',
-          sets: '5',
-          weight: '40kg',
-        },
-        {
-          id: 'deadlift',
-          name: 'Dead lift',
-          reps: '10',
-          sets: '5',
-          weight: '100kg',
-        },
+        // {
+        //   id: 'squat',
+        //   name: 'Back Squat',
+        //   reps: '10',
+        //   sets: '5',
+        //   weight: '80kg',
+        // },
+        // {
+        //   id: 'press',
+        //   name: 'Shoulder Press',
+        //   reps: '10',
+        //   sets: '5',
+        //   weight: '40kg',
+        // },
+        // {
+        //   id: 'deadlift',
+        //   name: 'Dead lift',
+        //   reps: '10',
+        //   sets: '5',
+        //   weight: '100kg',
+        // },
       ],
     };
   },
@@ -64,6 +65,9 @@ export default {
         weight: weight,
       };
       this.exercises.push(newExercise);
+    },
+    deleteExercise(id) {
+      this.exercises = this.exercises.filter((exercise) => exercise.id !== id);
     },
   },
 };
