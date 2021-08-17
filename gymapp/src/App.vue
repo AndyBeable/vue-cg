@@ -92,7 +92,7 @@ body {
   margin-top: 60px;
 }
 
-#ul {
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
