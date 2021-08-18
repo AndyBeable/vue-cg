@@ -4,10 +4,9 @@
     <new-exercise @add-exercise="addExercise"></new-exercise>
     <section>
       <p v-if="exercises.length < 0">Have a rest!</p>
-   
-    
+    </section>
+    <section v-if="exercises.length > 0">
       <exercise
-      v-if="exercises.length > 0"
         v-for="exercise in exercises"
         :key="exercise.id"
         :id="exercise.id"
@@ -17,7 +16,7 @@
         :weight="exercise.weight"
         @delete="deleteExercise"
       ></exercise>
-    
+    </section>
   </section>
 </template>
 
