@@ -1,35 +1,57 @@
 <template>
-  <base-card>
-    <form @submit.prevent="submitData">
-      <div class="form-control">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" ref="titleInput" />
-      </div>
-      <div class="form-control">
-        <label for="description">Description</label>
-        <textarea
-          type="text"
-          name="description"
-          id="description"
-          rows="3"
-          ref="descInput"
-        >
-        </textarea>
-      </div>
-      <div class="form-control">
-        <label for="link">Link</label>
-        <input type="url" name="link" id="link" ref="linkInput" />
-      </div>
-      <div>
-        <base-button type="submit">Add Resource</base-button>
-      </div>
-    </form>
-  </base-card>
+  <div>
+    <base-dialogue
+      v-if="inputIsInvalid"
+      title="Invalid Input"
+      @close="confirmError"
+    >
+      <template #default>
+        <p>Unfortunately, at least one input value is invalid.</p>
+        <p>Please check all inputs and make sure you enter a few characters.</p>
+      </template>
+      <template #actions>
+        <base-button @click="confirmError">Okay</base-button>
+      </template>
+    </base-dialogue>
+    <base-card>
+      <form @submit.prevent="submitData">
+        <div class="form-control">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" ref="titleInput" />
+        </div>
+        <div class="form-control">
+          <label for="description">Description</label>
+          <textarea
+            type="text"
+            name="description"
+            id="description"
+            rows="3"
+            ref="descInput"
+          >
+          </textarea>
+        </div>
+        <div class="form-control">
+          <label for="link">Link</label>
+          <input type="url" name="link" id="link" ref="linkInput" />
+        </div>
+        <div>
+          <base-button type="submit">Add Resource</base-button>
+        </div>
+      </form>
+    </base-card>
+  </div>
 </template>
 
 <script>
+import BaseButton from '../UI/BaseButton.vue';
 export default {
+  components: { BaseButton },
   inject: ['addResource'],
+  data() {
+    return {
+      inputIsInvalid: false
+    };
+  },
   methods: {
     submitData() {
       const enteredTitle = this.$refs.titleInput.value;
@@ -41,10 +63,14 @@ export default {
         enteredDesc.trim() === '' ||
         enteredUrl.trim() === ''
       ) {
+        this.inputIsInvalid = true;
         return;
       }
 
       this.addResource(enteredTitle, enteredDesc, enteredUrl);
+    },
+    confirmError() {
+      this.inputIsInvalid = false;
     }
   }
 };
