@@ -35,6 +35,15 @@ export default {
       const enteredTitle = this.$refs.titleInput.value;
       const enteredDesc = this.$refs.descInput.value;
       const enteredUrl = this.$refs.linkInput.value;
+
+      if (
+        enteredTitle.trim() === '' ||
+        enteredDesc.trim() === '' ||
+        enteredUrl.trim() === ''
+      ) {
+        return;
+      }
+
       this.addResource(enteredTitle, enteredDesc, enteredUrl);
     }
   }
