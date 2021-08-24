@@ -1,12 +1,17 @@
 <template>
-  <stored-exercises :exercises="storedExercises"></stored-exercises>
+  <div>
+    <the-header title="GymApp"></the-header>
+    <stored-exercises :exercises="storedExercises"></stored-exercises>
+  </div>
 </template>
 
 <script>
 import StoredExercises from './components/exercises/StoredExercises.vue';
+import TheHeader from './components/layouts/TheHeader.vue';
 export default {
   components: {
     StoredExercises,
+    TheHeader,
   },
   data() {
     return {
