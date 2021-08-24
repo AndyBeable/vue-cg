@@ -1,10 +1,16 @@
 <template>
   <div>
     <base-card>
-      <base-button @click="setSelectedTab('stored-exercises')">
+      <base-button
+        @click="setSelectedTab('stored-exercises')"
+        :mode="storedExButtonMode"
+      >
         Stored Exercises
       </base-button>
-      <base-button @click="setSelectedTab('add-exercise')">
+      <base-button
+        @click="setSelectedTab('add-exercise')"
+        :mode="addExButtonMode"
+      >
         Add Exercise
       </base-button>
     </base-card>
@@ -43,6 +49,14 @@ export default {
     return {
       exercises: this.storedExercises,
     };
+  },
+  computed: {
+    storedExButtonMode() {
+      return this.selectedTab === 'stored-exercises' ? null : 'flat';
+    },
+    addExButtonMode() {
+      return this.selectedTab === 'add-exercise' ? null : 'flat';
+    },
   },
   methods: {
     setSelectedTab(tab) {
