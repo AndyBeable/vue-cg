@@ -1,20 +1,12 @@
 <template>
-  <ul>
-    <exercise-item
-      v-for="exercise in storedExercises"
-      :key="exercise.id"
-      :title="exercise.title"
-      :description="exercise.description"
-      :link="exercise.link"
-    ></exercise-item>
-  </ul>
+  <stored-exercises :exercises="storedExercises"></stored-exercises>
 </template>
 
 <script>
-import ExerciseItem from './components/exercises/ExerciseItem.vue';
+import StoredExercises from './components/exercises/StoredExercises.vue';
 export default {
   components: {
-    ExerciseItem,
+    StoredExercises,
   },
   data() {
     return {
