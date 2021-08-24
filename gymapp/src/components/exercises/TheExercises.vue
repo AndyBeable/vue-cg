@@ -48,6 +48,7 @@ export default {
   provide() {
     return {
       exercises: this.storedExercises,
+      addExercise: this.addExercise,
     };
   },
   computed: {
@@ -61,6 +62,16 @@ export default {
   methods: {
     setSelectedTab(tab) {
       this.selectedTab = tab;
+    },
+    addExercise(title, description, url) {
+      const newExercise = {
+        id: new Date().toISOString(),
+        title: title,
+        description: description,
+        link: url,
+      };
+      this.storedExercises.unshift(newExercise);
+      this.selectedTab = 'stored-exercises';
     },
   },
 };
