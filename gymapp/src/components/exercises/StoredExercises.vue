@@ -16,7 +16,7 @@ export default {
   components: {
     ExerciseItem,
   },
-  props: ['exercises'],
+  inject: ['exercises'],
 };
 </script>
 

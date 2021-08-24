@@ -1,35 +1,17 @@
 <template>
   <div>
     <the-header title="GymApp"></the-header>
-    <stored-exercises :exercises="storedExercises"></stored-exercises>
+    <the-exercises></the-exercises>
   </div>
 </template>
 
 <script>
-import StoredExercises from './components/exercises/StoredExercises.vue';
 import TheHeader from './components/layouts/TheHeader.vue';
+import TheExercises from './components/exercises/TheExercises.vue';
 export default {
   components: {
-    StoredExercises,
     TheHeader,
-  },
-  data() {
-    return {
-      storedExercises: [
-        {
-          id: 'bench-press',
-          title: 'Bench Press',
-          description: 'Chest focused exercise',
-          link: 'https://google.co.uk',
-        },
-        {
-          id: 'squat',
-          title: 'Back Squat',
-          description: 'Leg focused exercise',
-          link: 'https://google.co.uk',
-        },
-      ],
-    };
+    TheExercises,
   },
 };
 </script>
