@@ -1,80 +1,38 @@
 <template>
-  <section>
-    <h1>GymApp</h1>
-    <new-exercise @add-exercise="addExercise"></new-exercise>
-    <section>
-      <p v-if="exercises.length < 0">Have a rest!</p>
-    </section>
-    <section v-if="exercises.length > 0">
-      <exercise
-        v-for="exercise in exercises"
-        :key="exercise.id"
-        :id="exercise.id"
-        :name="exercise.name"
-        :reps="exercise.reps"
-        :sets="exercise.sets"
-        :weight="exercise.weight"
-        @delete="deleteExercise"
-      ></exercise>
-    </section>
-  </section>
+  <ul>
+    <exercise-item
+      v-for="exercise in storedExercises"
+      :key="exercise.id"
+      :title="exercise.title"
+      :description="exercise.description"
+      :link="exercise.link"
+    ></exercise-item>
+  </ul>
 </template>
 
 <script>
-import Exercise from './components/Exercise.vue';
-import NewExercise from './components/NewExercise.vue';
+import ExerciseItem from './components/exercises/ExerciseItem.vue';
 export default {
-  name: 'App',
-  components: { Exercise, NewExercise },
+  components: {
+    ExerciseItem,
+  },
   data() {
     return {
-      exercises: [
+      storedExercises: [
         {
-          id: 'bench',
-          name: 'Bench Press',
-          reps: '10',
-          sets: '5',
-          weight: '70kg',
+          id: 'bench-press',
+          title: 'Bench Press',
+          description: 'Chest focused exercise',
+          link: 'https://google.co.uk',
         },
-        // {
-        //   id: 'squat',
-        //   name: 'Back Squat',
-        //   reps: '10',
-        //   sets: '5',
-        //   weight: '80kg',
-        // },
-        // {
-        //   id: 'press',
-        //   name: 'Shoulder Press',
-        //   reps: '10',
-        //   sets: '5',
-        //   weight: '40kg',
-        // },
-        // {
-        //   id: 'deadlift',
-        //   name: 'Dead lift',
-        //   reps: '10',
-        //   sets: '5',
-        //   weight: '100kg',
-        // },
+        {
+          id: 'squat',
+          title: 'Back Squat',
+          description: 'Leg focused exercise',
+          link: 'https://google.co.uk',
+        },
       ],
-      restDay: true,
     };
-  },
-  methods: {
-    addExercise(name, reps, sets, weight) {
-      const newExercise = {
-        id: new Date().toISOString(),
-        name: name,
-        reps: reps,
-        sets: sets,
-        weight: weight,
-      };
-      this.exercises.push(newExercise);
-    },
-    deleteExercise(id) {
-      this.exercises = this.exercises.filter((exercise) => exercise.id !== id);
-    },
   },
 };
 </script>
