@@ -3,6 +3,7 @@
     <exercise-item
       v-for="exercise in exercises"
       :key="exercise.id"
+      :id="exercise.id"
       :title="exercise.title"
       :description="exercise.description"
       :link="exercise.link"

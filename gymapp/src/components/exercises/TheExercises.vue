@@ -51,6 +51,7 @@ export default {
     return {
       exercises: this.storedExercises,
       addExercise: this.addExercise,
+      deleteExercise: this.deleteExercise,
     };
   },
   computed: {
@@ -74,6 +75,12 @@ export default {
       };
       this.storedExercises.unshift(newExercise);
       this.selectedTab = 'stored-exercises';
+    },
+    deleteExercise(exId) {
+      const exerciseIndex = this.storedExercises.findIndex(
+        (exercise) => exercise.id === exId
+      );
+      this.storedExercises.splice(exerciseIndex, 1);
     },
   },
 };
