@@ -68,7 +68,7 @@ export default {
         .catch(error => {
           console.log(error);
           this.isLoading = false;
-          this.error = 'Failed to fetch data - please try again later';
+          this.error = 'Failed to fetch data - please try again';
         });
     }
   },
