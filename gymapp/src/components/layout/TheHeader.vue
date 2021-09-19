@@ -3,8 +3,8 @@
     <nav>
       <h1><router-link to="/">Find an exercise</router-link></h1>
       <ul>
-        <li><router-link to="/coaches">All Exercises</router-link></li>
-        <li><router-link to="/requests">Favourites</router-link></li>
+        <li><router-link to="/exercises">All Exercises</router-link></li>
+        <li><router-link to="/favourites">Favourites</router-link></li>
       </ul>
     </nav>
   </header>
