@@ -6,12 +6,24 @@
       <span v-for="muscle in musclesWorked" :key="muscle">{{ muscle }}</span>
     </div>
     <h4>{{ difficulty }}</h4>
+    <div class="actions">
+      <router-link :to="exerciseDetailsLink">View Exercise</router-link>
+      <router-link :to="exerciseFavouritesLink">View Favourites</router-link>
+    </div>
   </li>
 </template>
 
 <script>
 export default {
   props: ['id', 'name', 'musclesWorked', 'difficulty'],
+  computed: {
+    exerciseDetailsLink() {
+      return this.$route.path + '/' + this.id;
+    },
+    exerciseFavouritesLink() {
+      return '/favourites';
+    },
+  },
 };
 </script>
 
