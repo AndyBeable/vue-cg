@@ -11,6 +11,7 @@
         :difficulty="exercise.difficulty"
       ></exercise-item>
     </ul>
+    <h3 v-else>No exercises available</h3>
   </section>
 </template>
 

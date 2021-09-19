@@ -1,6 +1,6 @@
 import { createStore } from 'vuex';
 
-import exercisesModule from './modules/exercises/index';
+import exercisesModule from './modules/exercises/index.js';
 
 const store = createStore({
   modules: {

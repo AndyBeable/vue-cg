@@ -3,6 +3,6 @@ export default {
     return state.exercises;
   },
   hasExercises(state) {
-    return state.exercises && state.exercises.length < 0;
+    return state.exercises && state.exercises.length > 0;
   },
 };

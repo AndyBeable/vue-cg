@@ -3,7 +3,7 @@ import actions from './actions';
 import getters from './getters';
 
 export default {
-  namedspaced: true,
+  namespaced: true,
   state() {
     return {
       exercises: [
