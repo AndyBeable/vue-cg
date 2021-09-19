@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import ExerciseList from './pages/exercises/ExerciseList.vue';
 import FavouritesList from './pages/favourites/FavouritesList.vue';
+import ExerciseDetail from './pages/exercises/ExerciseDetail.vue';
 
 import NotFound from './pages/NotFound.vue';
 
@@ -12,8 +13,7 @@ const router = createRouter({
     { path: '/exercises', component: ExerciseList },
     {
       path: '/exercises/:id',
-      component: null,
-      children: [{ path: 'contact', component: null }],
+      component: ExerciseDetail,
     },
     { path: '/favourites', component: FavouritesList },
     { path: '/:notFound(.*)', component: NotFound },
