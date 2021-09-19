@@ -1,6 +1,9 @@
 <template>
   <section>FILTER</section>
   <section>
+    <div class="controls">
+      <button>Refresh</button>
+    </div>
     <ul v-if="hasExercises">
       <exercise-item
         v-for="exercise in filteredExercises"
