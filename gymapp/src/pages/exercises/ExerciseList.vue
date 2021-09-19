@@ -7,7 +7,7 @@
         :key="exercise.id"
         :id="exercise.id"
         :name="exercise.name"
-        :muscle-worked="exercise.musclesWorked"
+        :muscles="exercise.muscles"
         :difficulty="exercise.difficulty"
       ></exercise-item>
     </ul>

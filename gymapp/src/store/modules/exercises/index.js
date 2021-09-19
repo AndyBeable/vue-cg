@@ -10,13 +10,13 @@ export default {
         {
           id: 'a1',
           name: 'Bench Press',
-          musclesWorked: ['chest', 'shoulders', 'arms'],
+          muscles: ['chest', 'shoulders', 'arms'],
           difficulty: 'easy',
         },
         {
           id: 'a2',
           name: 'Back Squat',
-          musclesWorked: ['glutes', 'hamstrings', 'quadriceps'],
+          muscles: ['glutes', 'hamstrings', 'quadriceps'],
           difficulty: 'hard',
         },
       ],

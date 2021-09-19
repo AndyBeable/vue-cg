@@ -1,9 +1,9 @@
 <template>
   <li>
     <h3>{{ name }}</h3>
-    <h4>{{ musclesWorked }}</h4>
+    <h4>{{ muscle }}</h4>
     <div>
-      <span v-for="muscle in musclesWorked" :key="muscle">{{ muscle }}</span>
+      <span v-for="muscle in muscles" :key="muscle">{{ muscle }}</span>
     </div>
     <h4>{{ difficulty }}</h4>
     <div class="actions">
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  props: ['id', 'name', 'musclesWorked', 'difficulty'],
+  props: ['id', 'name', 'muscles', 'difficulty'],
   computed: {
     exerciseDetailsLink() {
       return this.$route.path + '/' + this.id;
