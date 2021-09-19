@@ -1,18 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
+import ExerciseList from './pages/exercises/ExerciseList.vue';
+
+import NotFound from './pages/NotFound.vue';
+
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', redirect: '/coaches' },
-    { path: '/coaches', component: null },
+    { path: '/', redirect: '/exercises' },
+    { path: '/exercises', component: ExerciseList },
     {
-      path: '/coaches/:id',
+      path: '/exercises/:id',
       component: null,
       children: [{ path: 'contact', component: null }],
     },
     { path: '/register', component: null },
     { path: '/requests', component: null },
-    { path: '/:notFound(.*)', component: null },
+    { path: '/:notFound(.*)', component: NotFound },
   ],
 });
 
