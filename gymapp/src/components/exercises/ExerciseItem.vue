@@ -3,7 +3,12 @@
     <h3>{{ name }}</h3>
     <h4>{{ muscle }}</h4>
     <div>
-      <span v-for="muscle in muscles" :key="muscle">{{ muscle }}</span>
+      <base-badge
+        v-for="muscle in muscles"
+        :key="muscle"
+        :type="muscle"
+        :title="muscle"
+      ></base-badge>
     </div>
     <h4>{{ difficulty }}</h4>
     <div class="actions">
