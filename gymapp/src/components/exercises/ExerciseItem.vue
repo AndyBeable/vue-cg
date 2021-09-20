@@ -7,8 +7,12 @@
     </div>
     <h4>{{ difficulty }}</h4>
     <div class="actions">
-      <router-link :to="exerciseDetailsLink">View Exercise</router-link>
-      <router-link :to="exerciseFavouritesLink">View Favourites</router-link>
+      <base-button mode="outline" link :to="exerciseDetailsLink">
+        View Exercise
+      </base-button>
+      <base-button link :to="exerciseFavouritesLink">
+        View Favourites
+      </base-button>
     </div>
   </li>
 </template>

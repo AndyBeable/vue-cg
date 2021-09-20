@@ -3,7 +3,7 @@
   <section>
     <base-card>
       <div class="controls">
-        <button>Refresh</button>
+        <base-button mode="outline">Refresh</base-button>
       </div>
       <ul v-if="hasExercises">
         <exercise-item
