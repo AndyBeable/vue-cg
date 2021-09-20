@@ -1,20 +1,22 @@
 <template>
   <section>FILTER</section>
   <section>
-    <div class="controls">
-      <button>Refresh</button>
-    </div>
-    <ul v-if="hasExercises">
-      <exercise-item
-        v-for="exercise in filteredExercises"
-        :key="exercise.id"
-        :id="exercise.id"
-        :name="exercise.name"
-        :muscles="exercise.muscles"
-        :difficulty="exercise.difficulty"
-      ></exercise-item>
-    </ul>
-    <h3 v-else>No exercises available</h3>
+    <base-card>
+      <div class="controls">
+        <button>Refresh</button>
+      </div>
+      <ul v-if="hasExercises">
+        <exercise-item
+          v-for="exercise in filteredExercises"
+          :key="exercise.id"
+          :id="exercise.id"
+          :name="exercise.name"
+          :muscles="exercise.muscles"
+          :difficulty="exercise.difficulty"
+        ></exercise-item>
+      </ul>
+      <h3 v-else>No exercises available</h3>
+    </base-card>
   </section>
 </template>
 
