@@ -1,11 +1,11 @@
 <template>
   <form @submit.prevent="submitForm">
     <div class="form-control">
-      <label for="firstname">First Name</label>
+      <label for="firstname">Firstname</label>
       <input type="text" id="firstname" v-model.trim="firstName" />
     </div>
     <div class="form-control">
-      <label for="lastname">Last Name</label>
+      <label for="lastname">Lastname</label>
       <input type="text" id="lastname" v-model.trim="lastName" />
     </div>
     <div class="form-control">
@@ -16,7 +16,6 @@
       <label for="rate">Hourly Rate</label>
       <input type="number" id="rate" v-model.number="rate" />
     </div>
-
     <div class="form-control">
       <h3>Areas of Expertise</h3>
       <div>
@@ -29,7 +28,7 @@
       </div>
       <div>
         <input type="checkbox" id="career" value="career" v-model="areas" />
-        <label for="career">Career Advice</label>
+        <label for="career">Career Advisory</label>
       </div>
     </div>
     <base-button>Register</base-button>
@@ -38,7 +37,8 @@
 
 <script>
 export default {
-  date() {
+  emits: ['save-data'],
+  data() {
     return {
       firstName: '',
       lastName: '',
@@ -56,7 +56,8 @@ export default {
         rate: this.rate,
         areas: this.areas
       };
-      console.log(formData);
+
+      this.$emit('save-data', formData);
     }
   }
 };

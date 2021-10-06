@@ -7,7 +7,7 @@
       <base-card>
         <div class="controls">
           <base-button mode="outline">Refresh</base-button>
-          <base-button link to="/register">Register as a Coach</base-button>
+          <base-button link to="/register">Register as Coach</base-button>
         </div>
         <ul v-if="hasCoaches">
           <coach-item
@@ -20,7 +20,7 @@
             :areas="coach.areas"
           ></coach-item>
         </ul>
-        <h3 v-else>No coaches available.</h3>
+        <h3 v-else>No coaches found.</h3>
       </base-card>
     </section>
   </div>
@@ -29,8 +29,12 @@
 <script>
 import CoachItem from '../../components/coaches/CoachItem.vue';
 import CoachFilter from '../../components/coaches/CoachFilter.vue';
+
 export default {
-  components: { CoachItem, CoachFilter },
+  components: {
+    CoachItem,
+    CoachFilter
+  },
   data() {
     return {
       activeFilters: {
