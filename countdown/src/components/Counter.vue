@@ -40,8 +40,36 @@ export default {
     hours() {
       return this.minutes * 60;
     },
-    days() {
+    day() {
       return this.hours * 24;
+    },
+  },
+
+  mounted() {
+    this.showRemaining();
+  },
+
+  methods: {
+    showRemaining() {
+      const timer = setInterval(() => {
+        const now = new Date();
+        const end = new Date(2021, 12, 31, 10, 10, 10);
+        const distance = end.getTime() - now.getTime();
+
+        if (distance < 0) {
+          clearInterval(timer);
+          return;
+        }
+
+        const days = Math.floor(distance / this.day);
+        const hours = Math.floor((distance % this.day) / this.hours);
+        const minutes = Math.floor((distance % this.hours) / this.minutes);
+        const seconds = Math.floor((distance % this.minutes) / this.seconds);
+        this.displayMinutes = minutes < 10 ? "0" + minutes : minutes;
+        this.displaySeconds = seconds < 10 ? "0" + seconds : seconds;
+        this.displayHours = hours < 10 ? "0" + hours : hours;
+        this.displayDays = days < 10 ? "0" + days : days;
+      }, 1000);
     },
   },
 };
