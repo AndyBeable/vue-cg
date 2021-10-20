@@ -3,12 +3,29 @@ var app = new Vue({
   data: {
     product: "Socks",
     image: "./assets/green-socks-on-white.jpg",
-    inStock: true,
+    inStock: false,
     onSale: true,
     details: ["80% cotton", "20% polyester", "Gender-neutral"],
     variants: [
-      { variantId: 2234, variantColor: "green" },
-      { variantId: 2235, variantColor: "blue" },
+      {
+        variantId: 2234,
+        variantColor: "green",
+        variantImage: "./assets/green-socks-on-white.jpg",
+      },
+      {
+        variantId: 2235,
+        variantColor: "blue",
+        variantImage: "./assets/blue-socks-on-white.jpg",
+      },
     ],
+    cart: 0,
+  },
+  methods: {
+    addToCart() {
+      this.cart++;
+    },
+    updateProduct(variantImage) {
+      this.image = variantImage;
+    },
   },
 });
