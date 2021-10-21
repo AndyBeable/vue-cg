@@ -50,17 +50,9 @@ Vue.component("product", {
           </button>
        </div> 
 
-      <div>
-      <h2>Reviews</h2>
-      <p v-if="!reviews.length">There are no reviews yet</p>
-      <ul>
-        <li v-for="review in reviews">{{review.name}}
-        {{review.review}}
-        Rating: {{review.rating}}</li>
-      </ul>
-      </div>
-
-       <product-review @review-submitted="addReview"></product-review>
+<product-tabs :reviews="reviews"></product-tabs>
+       
+     
     
     </div>
    `,
@@ -180,6 +172,32 @@ Vue.component("product-review", {
         if (!this.rating) this.errors.push("Rating required.");
       }
     },
+  },
+});
+
+Vue.component("product-tabs", {
+  template: `
+  <div>
+  <span class="tab" :class="{activeTab: selectedTab === tab}" v-for="tab in tabs" :key="index" @click="selectedTab = tab">{{tab}}</span>
+  </div>
+
+   <div>
+      <p v-if="!reviews.length">There are no reviews yet</p>
+      <ul>
+        <li v-for="review in reviews">{{review.name}}
+        {{review.review}}
+        Rating: {{review.rating}}</li>
+      </ul>
+      </div>
+
+       <product-review @review-submitted="addReview"></product-review>
+
+  `,
+  data() {
+    return {
+      tabs: ["Reviews", "Make a Review"],
+      selectedTab: "Reviews",
+    };
   },
 });
 
