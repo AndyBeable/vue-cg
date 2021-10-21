@@ -16,18 +16,19 @@
           <img :src="image" alt="" />
         </div>
         <div class="product-info">
-          <h1>{{product}}</h1>
-          <h3 v-if="onSale">On Sale!</h3>
+          <h1>{{title}}</h1>
+
           <p v-show="inStock">In Stock</p>
+          <h3 v-if="onSale">{{ sale}}</h3>
           <ul>
             <li v-for="detail in details">{{detail}}</li>
           </ul>
           <div
-            v-for="variant in variants"
+            v-for="(variant, index) in variants"
             :key="variant.variantId"
             class="color-box"
             :style="{backgroundColor: variant.variantColor}"
-            @mouseOver="updateProduct(variant.variantImage)"
+            @mouseOver="updateProduct(index)"
           ></div>
 
           <button
