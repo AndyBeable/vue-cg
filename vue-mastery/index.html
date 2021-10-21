@@ -11,38 +11,11 @@
     <div class="nav-bar"></div>
 
     <div id="app">
-      <div class="product">
-        <div class="product-image">
-          <img :src="image" alt="" />
-        </div>
-        <div class="product-info">
-          <h1>{{title}}</h1>
-
-          <p v-show="inStock">In Stock</p>
-          <h3 v-if="onSale">{{ sale}}</h3>
-          <ul>
-            <li v-for="detail in details">{{detail}}</li>
-          </ul>
-          <div
-            v-for="(variant, index) in variants"
-            :key="variant.variantId"
-            class="color-box"
-            :style="{backgroundColor: variant.variantColor}"
-            @mouseOver="updateProduct(index)"
-          ></div>
-
-          <button
-            @click="addToCart"
-            :disabled="!inStock"
-            :class="{disabledButton: !inStock}"
-          >
-            Add to Cart
-          </button>
-          <div class="cart">
-            <p>Cart ({{ cart}})</p>
-          </div>
-        </div>
+      <div class="cart">
+        <p>Cart({{ cart.length }})</p>
       </div>
+
+      <product :premium="premium" @add-to-cart="addToCart"></product>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="main.js"></script>
