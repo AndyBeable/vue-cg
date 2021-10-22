@@ -1,21 +1,26 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-import About from "../views/About.vue";
+import EventCreate from "../views/EventCreate.vue";
+import EventList from "../views/EventList.vue";
+import EventShow from "../views/EventShow.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: Home,
+    name: "event-list",
+    component: EventList,
   },
   {
-    path: "/about-us",
-    name: "about",
-    component: About,
-    alias: "/about",
+    path: "/event",
+    name: "event-show",
+    component: EventShow,
+  },
+  {
+    path: "/event/create",
+    name: "event-create",
+    component: EventCreate,
   },
 ];
 
